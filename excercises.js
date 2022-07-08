@@ -84,3 +84,84 @@ function areYouPlayingBanjo(name) {
         return name + " does not play banjo";
     }
 }
+
+//Consider an array/list of sheep where some sheep may be missing from their place. We need a function that counts the
+//number of sheep present in the array (true means present).
+
+function countSheeps(arrayOfSheep) {
+    return arrayOfSheep.filter(Boolean).length;
+}
+
+//Write function bmi that calculates body mass index (bmi = weight / height2).
+
+function bmi(weight, height) {
+    let bmi = weight / (height * height);
+
+    if (bmi <= 18.5) {
+        return "Underweight";
+    } else if (bmi <= 25.0) {
+        return "Normal";
+    } else if (bmi <= 30.0) {
+        return "Overweight";
+    } else return "Obese";
+}
+
+//otra forma
+
+const bmi = (w, h, bmi = w / h / h) =>
+    bmi <= 18.5 ?
+    "Underweight" :
+    bmi <= 25 ?
+    "Normal" :
+    bmi <= 30 ?
+    "Overweight" :
+    "Obese";
+
+/*Given a non-empty array of integers, return the result of multiplying the values together in order. 
+Example:
+
+[1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24 */
+
+function grow(x) {
+    let total = 1;
+    for (let i = 0; i < x.length; i++) {
+        total *= x[i];
+    }
+    return total;
+}
+
+// x *= y ---->  x = x * y
+
+//Complete the function which converts a binary number (given as a string) to a decimal number.
+
+function binToDec(bin) {
+    return parseInt(bin, 2);
+}
+
+/*Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained.*/
+
+function reverseWords(str) {
+    return str
+        .split(" ")
+        .map((x) => x.split("").reverse().join(""))
+        .join(" ");
+}
+
+//otra forma 
+
+function reverseWords(str) {
+    let result = "";
+    let pop = [];
+
+    for (let palabra of str.split(" ")) {
+        for (let i = 0; i < 0 palabra.lenght; i++) {
+            result = palabra[i] + result;
+
+        }
+        pop.push(result);
+        result = "";
+
+    }
+
+    return pop.join(" ");
+}
