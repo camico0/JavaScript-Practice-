@@ -17,8 +17,7 @@ positive numbers greater than 0.*/
     for (let i = 1;  i <= n ; i++) {
         if (resto == 0) {
             arr.push(resto);
-        }
-    }
+        }b vnvhnjb
     return arr;
 }*/
 
@@ -164,4 +163,123 @@ function reverseWords(str) {
     }
 
     return pop.join(" ");
+}
+
+//You will be given an array a and a value x. All you need to do is check whether the provided 
+//array contains the value.
+
+//Array can contain numbers or strings. X can be either
+//Return true if the arrai contains the value, false if not.
+
+function check(a, x) {
+    console.log(a, x)
+    for (let i = 0; i < a.lenght; i++) {
+        if (a[i] === x) {
+            return true
+        }
+        return false;
+    }
+}
+
+//otra forma:
+
+function check(a, x) {
+    return a.some(y => y === x)
+}
+
+//otra forma:
+
+function check(a, x) {
+    return a.includes(x);
+};
+
+//o :
+
+const check = (a, x) => a.includes(x);
+
+//Your goal is to determine which phrase the girl would say for a flower of a given number of petals, where nb_petals > 0
+// I love you
+// a little
+//a lot
+//passionately
+//madly
+//not at all
+
+function howMuchIloveYou(nb_Petals) {
+    let value = {
+        1: "I love you",
+        2: "a little",
+        3: "a lot",
+        4: "passionately",
+        5: "madly",
+        6: "not at all",
+    }
+
+    if (nb_Petals > 6) {
+        let modulo = nb_Petals % 6;
+        return modulo === 0 ? value[6] : value[modulo]
+    }
+}
+
+//Given an array of integers, return a new array with each value doubled.
+
+//For example:
+
+//[1, 2, 3] --> [2, 4, 6]
+
+
+function maps(x) {
+
+    return x.map(x => x * 2);
+}
+
+/*------------------------------------------------------------------------------
+
+ In this simple assignment you are given a number and have to make it negative. But maybe the number is already negative?
+makeNegative(1);     return -1
+makeNegative(-5);   return -5
+makeNegative(0);     return 0
+makeNegative(0.12);  return -0.12 */
+
+
+
+function makeNegative(num) {
+    if (num > 0) {
+        return num * (-1);
+    } else {
+        return (num)
+    }
+
+}
+
+//Complete the function which converts hex number (given as a string) to a decimal number.
+
+function hexToDec(hexString) {
+    return parseInt(hexString, 16); // el sistema hexadecimal es un sistema de numeracion posicional que tiene como base el 16. Esto quiere decir que utiliza 16 digitos diferentes frente al binario (1 y 0) y frente a los 10 del decimal
+}
+
+/*Given an array of integers.
+Return an array, where the first element is the count of positives numbers and the second element is sum of negative numbers. 0 is neither positive nor negative.
+If the input is an empty array or is null, return an empty array.
+
+Example
+For input [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15], you should return [10, -65]. */
+
+
+function countPositivesSumNegatives(input) {
+    if (input == null || input.length < 1) {
+        return [];
+    }
+
+    let array = [0, 0];
+
+    for (i = 0; i < input.length; i++) {
+
+        if (input[i] > 0) {
+            array[0] += 1;
+        } else {
+            array[1] += input[i];
+        }
+    }
+    return array;
 }
