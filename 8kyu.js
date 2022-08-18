@@ -146,36 +146,34 @@ function reverseWords(str) {
         .join(" ");
 }
 
-//otra forma 
+//otra forma
 
 function reverseWords(str) {
     let result = "";
     let pop = [];
 
     for (let palabra of str.split(" ")) {
-        for (let i = 0; i < 0 palabra.lenght; i++) {
+        for (let i = 0; i < 0; palabra.length, i++) {
             result = palabra[i] + result;
-
         }
         pop.push(result);
         result = "";
-
     }
 
     return pop.join(" ");
 }
 
-//You will be given an array a and a value x. All you need to do is check whether the provided 
+//You will be given an array a and a value x. All you need to do is check whether the provided
 //array contains the value.
 
 //Array can contain numbers or strings. X can be either
 //Return true if the arrai contains the value, false if not.
 
 function check(a, x) {
-    console.log(a, x)
+    console.log(a, x);
     for (let i = 0; i < a.lenght; i++) {
         if (a[i] === x) {
-            return true
+            return true;
         }
         return false;
     }
@@ -184,14 +182,14 @@ function check(a, x) {
 //otra forma:
 
 function check(a, x) {
-    return a.some(y => y === x)
+    return a.some((y) => y === x);
 }
 
 //otra forma:
 
 function check(a, x) {
     return a.includes(x);
-};
+}
 
 //o :
 
@@ -213,11 +211,11 @@ function howMuchIloveYou(nb_Petals) {
         4: "passionately",
         5: "madly",
         6: "not at all",
-    }
+    };
 
     if (nb_Petals > 6) {
         let modulo = nb_Petals % 6;
-        return modulo === 0 ? value[6] : value[modulo]
+        return modulo === 0 ? value[6] : value[modulo];
     }
 }
 
@@ -227,10 +225,8 @@ function howMuchIloveYou(nb_Petals) {
 
 //[1, 2, 3] --> [2, 4, 6]
 
-
 function maps(x) {
-
-    return x.map(x => x * 2);
+    return x.map((x) => x * 2);
 }
 
 /*------------------------------------------------------------------------------
@@ -241,15 +237,12 @@ makeNegative(-5);   return -5
 makeNegative(0);     return 0
 makeNegative(0.12);  return -0.12 */
 
-
-
 function makeNegative(num) {
     if (num > 0) {
-        return num * (-1);
+        return num * -1;
     } else {
-        return (num)
+        return num;
     }
-
 }
 
 //Complete the function which converts hex number (given as a string) to a decimal number.
@@ -265,7 +258,6 @@ If the input is an empty array or is null, return an empty array.
 Example
 For input [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15], you should return [10, -65]. */
 
-
 function countPositivesSumNegatives(input) {
     if (input == null || input.length < 1) {
         return [];
@@ -274,7 +266,6 @@ function countPositivesSumNegatives(input) {
     let array = [0, 0];
 
     for (i = 0; i < input.length; i++) {
-
         if (input[i] > 0) {
             array[0] += 1;
         } else {
@@ -282,4 +273,241 @@ function countPositivesSumNegatives(input) {
         }
     }
     return array;
+}
+
+//Convert a Number to a String!
+
+function numberToString(num) {
+    return num.toString();
+}
+
+//OTRA OPCION:
+const numberToString = (num) => `${num}`;
+
+//Create a function that removes the first and last characters of a string. You're given one parameter, the original string. You don't have to worry with strings with less than two characters.
+
+function removeChar(str) {
+    return str.slice(1, str.length - 1);
+}
+
+//given an integer or a floating-point number, find its opposite.
+
+function opposite(number) {
+    if (number > 0) {
+        return number * -1;
+    } else {
+        return number * -1;
+    }
+}
+
+//otra opcion:
+
+function opposite(number) {
+    return -number;
+}
+//otra opcion:
+function opposite(number) {
+    return number * -1;
+}
+
+//Create a method to see whether the string is ALL CAPS.
+
+// Examples (input -> output)
+// "c" -> False
+// "C" -> True
+// "hello I AM DONALD" -> False
+// "HELLO I AM DONALD" -> True
+// "ACSKLDFJSgSKLDFJSKLDFJ" -> False
+// "ACSKLDFJSGSKLDFJSKLDFJ" -> True
+
+String.prototype.isUpperCase = function() {
+    return this.toUpperCase() === this.valueOf();
+};
+
+//otra opcion:
+
+String.prototype.isUpperCase = function() {
+    if (this.toString() == this.toUpperCase()) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+//otra opcion:
+
+String.prototype.isUpperCase = function() {
+    let string = this.toUpperCase();
+
+    if (this == string) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+//If you can't sleep, just count sheep!!
+//Given a non-negative integer, 3 for example, return a string with a murmur: "1 sheep...2 sheep...3 sheep...". Input will always be valid, i.e. no negative integers.
+
+var countSheep = function(num) {
+    let sheep = "";
+    for (i = 1; i <= num; i++) {
+        sheep += i + " sheep...";
+    }
+    return sheep;
+};
+
+//return a boollean into a string
+
+function booleanToString(b) {
+    return b.toString();
+}
+
+//String repeat
+
+//Write a function that accepts an integer n and a string s as parameters, and returns a string of s repeated exactly n times.
+
+function repeatStr(n, s) {
+    if (n > 0) {
+        return s.repeat(n);
+    } else {
+        return "";
+    }
+}
+
+//Merge two sorted arrays into one
+//example : [1, 3, 5, 7, 9, 11, 12], [1, 2, 3, 4, 5, 10, 12] ---> [1, 2, 3, 4, 5, 7, 9, 10, 11, 12]
+
+function mergeArrays(arr1, arr2) {
+    if (!arr1.length && !arr2.length) return [];
+
+    let arr3 = arr1.concat(arr2); //concateno los arrays
+    arr3.sort((a, b) => a - b); //los ordeno de menor a mayor
+
+    let filteredArr = [...new Set(arr3)]; //no entendi bien el filter
+    return filteredArr;
+}
+
+//Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
+
+function even_or_odd(number) {
+    if (number % 2 == 0) {
+        return "Even";
+    } else {
+        return "Odd";
+    }
+}
+
+//otra forma:
+function even_or_odd(number) {
+    return number % 2 ? "Odd" : "Even";
+}
+
+//Square(n) Sum
+//example :  for [1, 2, 2] it should return 9 because 1^2 + 2^2 + 2^2 = 9.
+
+function squareSum(numbers) {
+    let sum = 0;
+    for (i = 0; i < numbers.length; i++) {
+        sum += numbers[i] ** 2;
+    }
+    return sum;
+}
+
+//volume of a cubid
+
+class Kata {
+    static getVolumeOfCuboid(length, width, height) {
+        return length * width * height;
+    }
+}
+
+//take the derivate
+//example : derive(7, 8) --> this should output "56x^7"
+
+function derive(coefficient, exponent) {
+    let multiply = coefficient * exponent;
+    return `${multiply}x^${exponent - 1}`;
+}
+
+//You will be given a list of strings. You must sort it alphabetically (case-sensitive, and based on the ASCII values of the chars) and then return the first value.
+
+// The returned value must be a string, and have "***" between each of its letters.
+
+// You should not remove or add elements from/to the array
+
+function twoSort(s) {
+    for (i = 0; i < s.length; i++) {
+        s.sort(); //ordena alfabeticamente
+        s[0]; //agarro el primer elem del array
+        s[0].split();
+    }
+
+    let str = s[0];
+    return str.split("").join("***");
+}
+
+//otra forma:
+
+function twoSort(s) {
+    return s.sort()[0].split("").join("***");
+}
+
+//piedra papel o tijera
+
+const rps = (p1, p2) => {
+    if (p1 === p2) {
+        return `Draw!`;
+    }
+
+    if (p1 === "rock" && p2 === "scissors") {
+        return "Player 1 won!";
+    } else if (p1 === "paper" && p2 === "rock") {
+        return "Player 1 won!";
+    } else if (p1 === "scissors" && p2 === "paper") {
+        return "Player 1 won!";
+    } else {
+        return "Player 2 won!";
+    }
+};
+
+//Reversed sequence
+
+const reverseSeq = (n) => {
+    let arr = [];
+    for (let i = n; i > 0; i--) {
+        arr.push(i);
+    }
+    return arr;
+};
+
+//How good are you really?
+
+function betterThanAverage(classPoints, yourPoints) {
+    let sum = 0;
+    for (let i = 0; i < classPoints.length; i++) {
+        sum += classPoints[i];
+    }
+    sum = sum / classPoints.length;
+    if (sum > yourPoints) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+//Find Multiples of a Number
+
+function findMultiples(integer, limit) {
+    let result = [];
+
+    for (let i = integer; i <= limit; i += integer) result.push(i);
+
+    return result;
+}
+
+//inverted values
+
+function invert(array) {
+    return array.map((e) => e * -1);
 }
